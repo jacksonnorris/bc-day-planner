@@ -41,6 +41,8 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  height: auto;
+  width: 50px;
 }
 
 .past {
@@ -64,6 +66,11 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  width: 75px;
+}
+
+.saveBtn i {
+  margin: 10px;
 }
 
 .saveBtn i:hover {
@@ -71,12 +78,13 @@ textarea {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.time-block input {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+.time-block {
+  height: auto;
 }
 .container-fluid .row {
   height: auto;
+}
+.input-group {
+  height: 40px;
+  margin: -20px 0;
 }

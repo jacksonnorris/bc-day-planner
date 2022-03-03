@@ -1,7 +1,7 @@
 $('#currentDay').text(moment().format('dddd MMMM Do'));
 var currentHour = parseInt(moment().format('HH'));
 $('.form-horizontal').on('click', '.saveBtn', storeData)
-$('.form-horizontal').on('click', '.fa-save', function() { $(this).parent().click();} )
+$('.form-horizontal').on('click', '.fa-save', clickParent)
 $('.time-block').each(function(index) {
     if (index + 9 < currentHour) { this.classList.add('past'); }
     else if (index + 9 === currentHour) { this.classList.add('present'); }
@@ -15,4 +15,9 @@ function storeData(event) {
     var currentTag = $(event.target).siblings(".hour").text().toLowerCase();
     var data = $('#' + currentTag).val();
     localStorage.setItem(currentTag, data);
+}
+function clickParent(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    $(this).parent().click();
 }
